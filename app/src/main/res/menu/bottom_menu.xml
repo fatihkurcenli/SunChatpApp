@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/chat_icon"
-        android:title="Chat" />
+        android:title="Chat"
+        app:labelVisibilityMode="unlabeled" />
     <item
         android:id="@+id/searchFragment"
         android:icon="@drawable/telephone_icon"
-        android:title="Telephone" />
+        android:title="Telephone"
+        app:labelVisibilityMode="unlabeled" />
     <item
         android:id="@+id/favoriteFragment"
         android:icon="@drawable/group_icon"
-        android:title="Group" />
+        android:title="Group"
+        app:labelVisibilityMode="unlabeled" />
 
 </menu>

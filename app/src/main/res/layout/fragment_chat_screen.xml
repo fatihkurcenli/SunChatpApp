@@ -51,8 +51,7 @@
             android:hint="Message"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:maxLines="6"
-            android:text="@={viewmodel.newMessageText}" />
+            android:maxLines="6" />
 
         <ImageView
             android:id="@+id/attach_button"
