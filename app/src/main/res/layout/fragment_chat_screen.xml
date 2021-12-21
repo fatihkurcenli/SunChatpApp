@@ -9,7 +9,7 @@
         android:id="@+id/chat_toolbar"
         layout="@layout/chat_view_toolbar" />
 
-    <com.airbnb.epoxy.EpoxyRecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/messagesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"

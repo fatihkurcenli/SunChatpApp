@@ -6,6 +6,6 @@ package com.autumnsun.sunchatapp.data.remote
 
 data class ChatModel(
     val message: String,
-    val isSender: Boolean,
+    val senderId: String,
     val time: Long
 )

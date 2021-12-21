@@ -5,6 +5,7 @@ import com.autumnsun.sunchatapp.R
 import com.autumnsun.sunchatapp.core.BaseFragment
 import com.autumnsun.sunchatapp.data.remote.ChatModel
 import com.autumnsun.sunchatapp.databinding.FragmentChatScreenBinding
+import com.autumnsun.sunchatapp.ui.chat_screen.adapter.ChatRecyclerView
 
 /*
  Created by Fatih Kurcenli on 12/20/2021
@@ -13,19 +14,17 @@ import com.autumnsun.sunchatapp.databinding.FragmentChatScreenBinding
 class ChatScreenFragment :
     BaseFragment<FragmentChatScreenBinding, ChatScreenViewModel>(R.layout.fragment_chat_screen) {
 
-    private lateinit var chatScreenEpoxy: ChatEpoxyController
     private val list = ArrayList<ChatModel>()
 
     override fun initializeUi() {
         //mainActivity.bottomNavBar.visibility = View.GONE
-        list.add(ChatModel("Selam", true, 123))
-        list.add(ChatModel("merhaba", true, 123))
-        list.add(ChatModel("Hello", false, 123))
-        list.add(ChatModel("Hi", false, 123))
-        chatScreenEpoxy = ChatEpoxyController()
-        chatScreenEpoxy.chatModelList = list
-        binding.messagesRecyclerView.setController(chatScreenEpoxy)
-        chatScreenEpoxy.requestModelBuild()
+        list.add(ChatModel("Selam", "123", 123))
+        list.add(ChatModel("merhaba", "123", 123))
+        list.add(ChatModel("Hello", "321", 123))
+        list.add(ChatModel("Hi", "321", 123))
+        val chatRecyclerView = ChatRecyclerView(list, "123")
+        binding.messagesRecyclerView.adapter = chatRecyclerView
+
     }
 
     override val mViewModel: ChatScreenViewModel
