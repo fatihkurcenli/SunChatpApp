@@ -12,6 +12,31 @@
     <color name="chat_background_color">#FFECFBFF</color>
     <!--bottom nav bar select color-->
     <color name="item_select_color">#FF20BDEB</color>
+    <color name="tool_Bar_color">#FF20BDEB</color>
 
+
+    //deneme
+    <color name="colorTheme">#3580FF</color>
+    <color name="colorSecondary">#757575</color>
+    <color name="colorSkyTheme">#4A90E2</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorTxt">#212121</color>
+    <color name="colorHint">#707070</color>
+    <color name="colorPrimaryLt">#615C5585</color>
+    <color name="colorBlackLt">#80000000</color>
+    <color name="colorWhiteLt">#80FFFFFF</color>
+    <color name="colorThemeRed">#F00606</color>
+    <color name="colorDefaultBg">#f8f9fa</color>
+    <color name="colorGreyLt">#AD87868A</color>
+    <color name="colorGrey">#F869696C</color>
+    <color name="colorBlue">#6478FB</color>
+    <color name="colorOrange">#F9583A</color>
+    <color name="colorTop">#4676E5</color>
+    <color name="colorBottom">#7C71E9</color>
+    <color name="progress_primary">@color/white</color>
+    <color name="progress_secondary">@color/gray_scale</color>
+    <color name="progress_max_active">@color/white</color>
+    <color name="gray_scale">#74FFFFFF</color>
 
 </resources>
