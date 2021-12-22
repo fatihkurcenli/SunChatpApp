@@ -24,7 +24,6 @@ class ChatRecyclerView(
             MessageType.RECEIVER.ordinal
         }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             MessageType.SENDER.ordinal -> SenderViewHolder.create(parent)
