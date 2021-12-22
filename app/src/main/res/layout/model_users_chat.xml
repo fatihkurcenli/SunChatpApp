@@ -5,6 +5,13 @@
 
     <data>
 
+        <variable
+            name="chatUserModel"
+            type="com.autumnsun.sunchatapp.data.remote.UsersModel" />
+
+        <variable
+            name="date"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,6 +21,7 @@
 
         <ImageView
             android:id="@+id/imageView5"
+            circleAvatar="@{chatUserModel.imageUrl}"
             android:layout_width="48dp"
             android:layout_height="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -22,12 +30,56 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
+            android:id="@+id/user_name_text_view"
             android:layout_width="wrap_content"
-            android:layout_marginHorizontal="16dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             app:layout_constraintStart_toEndOf="@+id/imageView5"
             app:layout_constraintTop_toTopOf="@+id/imageView5"
-            tools:text="Fatih Kurçenli" />
+            tools:text="@{chatUserModel.userName}" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_text_view"
+            tools:text="@{chatUserModel.lastMessage}" />
+
+        <TextView
+            android:id="@+id/last_message_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@{date}" />
+
+        <ImageView
+            android:id="@+id/sended_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:src="@drawable/ic_sended_success"
+            app:layout_constraintEnd_toStartOf="@+id/last_message_date_text_view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            isHasNotification="@{true}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_notification_badge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/last_message_date_text_view">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                tools:text="5" />
+        </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

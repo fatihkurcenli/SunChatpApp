@@ -13,7 +13,7 @@ import com.autumnsun.sunchatapp.ui.chat_screen.adapter.viewholder.SenderViewHold
 
 
 class ChatRecyclerView(
-    val messageList: List<ChatModel>,
+    var messageList: ArrayList<ChatModel>,
     val senderId: String,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -23,6 +23,12 @@ class ChatRecyclerView(
         } else {
             MessageType.RECEIVER.ordinal
         }
+
+    fun changedData(newMessageList: List<ChatModel>) {
+        messageList = newMessageList as ArrayList<ChatModel>
+        notifyDataSetChanged()
+        //    notifyItemRangeChanged(messageList.size, messageList.size)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {

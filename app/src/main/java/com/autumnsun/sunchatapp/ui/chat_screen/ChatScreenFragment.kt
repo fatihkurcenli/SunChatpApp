@@ -1,5 +1,7 @@
 package com.autumnsun.sunchatapp.ui.chat_screen
 
+import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.autumnsun.sunchatapp.R
 import com.autumnsun.sunchatapp.core.BaseFragment
@@ -16,15 +18,19 @@ class ChatScreenFragment :
 
     private val list = ArrayList<ChatModel>()
 
-    override fun initializeUi() {
-        //mainActivity.bottomNavBar.visibility = View.GONE
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         list.add(ChatModel("Selam", "123", 123))
         list.add(ChatModel("merhaba", "123", 123))
         list.add(ChatModel("Hello", "321", 123))
         list.add(ChatModel("Hi", "321", 123))
         val chatRecyclerView = ChatRecyclerView(list, "123")
         binding.messagesRecyclerView.adapter = chatRecyclerView
-
+        binding.microphoneButton.setOnClickListener {
+            list.add(ChatModel(binding.editTextMessage.text.toString(), "123", 123))
+            chatRecyclerView.changedData(list)
+            binding.messagesRecyclerView.smoothScrollToPosition(list.size - 1)
+        }
     }
 
     override val mViewModel: ChatScreenViewModel
@@ -32,5 +38,4 @@ class ChatScreenFragment :
 
     override fun getViewBinding(): FragmentChatScreenBinding =
         FragmentChatScreenBinding.inflate(layoutInflater)
-
 }

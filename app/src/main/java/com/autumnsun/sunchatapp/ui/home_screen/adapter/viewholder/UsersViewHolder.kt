@@ -16,7 +16,8 @@ class UsersViewHolder(
 
 
     fun bind(usersChatModel: UsersModel) {
-
+        usersChatBinding.chatUserModel = usersChatModel
+        usersChatBinding.date = usersChatModel.date.toString()
     }
 
     companion object {

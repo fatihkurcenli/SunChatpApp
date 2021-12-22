@@ -6,7 +6,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupWithNavController
 import com.autumnsun.sunchatapp.R
 import com.autumnsun.sunchatapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
