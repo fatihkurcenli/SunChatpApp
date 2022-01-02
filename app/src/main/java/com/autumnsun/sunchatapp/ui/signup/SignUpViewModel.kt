@@ -1,11 +1,12 @@
 package com.autumnsun.sunchatapp.ui.signup
 
-import android.util.Patterns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.autumnsun.sunchatapp.core.utils.Resource
 import com.autumnsun.sunchatapp.domain.usecase.SunChatAppCase
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -27,7 +28,7 @@ class SignUpViewModel @Inject constructor(
     val eventFlow = _eventFlow.asSharedFlow()
 
     fun signUpEmail(email: String, password: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             /*if (email.isEmpty() || password.isEmpty()) {
                 _eventFlow.emit(UIEvent.ShowSnackBar("Boşluk bırakmayınız"))
                 return@launch
