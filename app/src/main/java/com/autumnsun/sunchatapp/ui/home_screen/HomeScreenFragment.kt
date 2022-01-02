@@ -35,7 +35,7 @@ class HomeScreenFragment :
     }
 
     override val mViewModel: HomeViewModel
-        get() = ViewModelProvider(this).get(HomeViewModel::class.java)
+        get() = ViewModelProvider(this)[HomeViewModel::class.java]
 
     override fun getViewBinding(): FragmentHomeScreenBinding =
         FragmentHomeScreenBinding.inflate(layoutInflater)

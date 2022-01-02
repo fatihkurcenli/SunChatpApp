@@ -5,9 +5,9 @@ package com.autumnsun.sunchatapp.data.remote
 */
 
 data class UsersModel(
-    val id: String,
-    val userName: String,
-    val imageUrl: String,
-    val lastMessage: String,
-    val date: Long
+    val id: String?,
+    val userName: String?,
+    val imageUrl: String?,
+    val lastMessage: String?,
+    val date: Long?
 )

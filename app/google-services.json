@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "336080090059",
+    "firebase_url": "https://sunchatappp-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sunchatappp",
+    "storage_bucket": "sunchatappp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336080090059:android:74cd210d6a4da9901b3c4e",
+        "android_client_info": {
+          "package_name": "com.autumnsun.sunchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336080090059-0li94moi99btmas37qbunm3au1kcfojp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmkESs9vkRGYevBhjo3vgS61j8NYu6MKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336080090059-0li94moi99btmas37qbunm3au1kcfojp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

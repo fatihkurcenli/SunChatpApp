@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/chatScreenFragment">
+    app:startDestination="@id/signUpFragment">
 
     <fragment
         android:id="@+id/chatScreenFragment"
@@ -18,4 +18,12 @@
 
         android:label="HomeScreenFragment"
         tools:layout="@layout/fragment_home_screen" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.autumnsun.sunchatapp.ui.signup.SignUpFragment"
+        android:label="SignUpFragment">
+        <action
+            android:id="@+id/action_signUpFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
 </navigation>
