@@ -1,5 +1,6 @@
 package com.autumnsun.sunchatapp.data.repository
 
+import com.autumnsun.sunchatapp.core.utils.DataStoreUtil
 import com.autumnsun.sunchatapp.core.utils.Resource
 import com.autumnsun.sunchatapp.data.remote.UsersModel
 import com.autumnsun.sunchatapp.domain.repository.ChatRepository
@@ -16,7 +17,8 @@ import java.util.*
 
 class ChatAppImpl(
     private val api: FirebaseDatabase,
-    private val auth: FirebaseAuth
+    private val auth: FirebaseAuth,
+    private val dataStoreUtil: DataStoreUtil
 ) : ChatRepository {
 
     override fun signUpUser(email: String, password: String): Flow<Resource<Boolean>> =
@@ -27,9 +29,12 @@ class ChatAppImpl(
                     id = it.uid,
                     "Fatih",
                     "imageUrl",
-                    "ok",
                     Calendar.getInstance().timeInMillis
                 )
+                val token = it.getIdToken(true).await()
+                token.token?.let { getToken ->
+                    dataStoreUtil.setSecuredData(getToken)
+                }
                 api.getReference("users").child("data").setValue(user).await()
                 emit(Resource.Success(data = true))
             } ?: emit(Resource.Error("Kayıt edilemedi"))
