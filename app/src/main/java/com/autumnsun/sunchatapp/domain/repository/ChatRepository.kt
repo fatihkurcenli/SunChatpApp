@@ -5,5 +5,5 @@ package com.autumnsun.sunchatapp.domain.repository
 */
 
 interface ChatRepository {
-    suspend fun signUpUser(email: String, password: String): Boolean
+    suspend fun signUpUser(email: String, password: String)
 }

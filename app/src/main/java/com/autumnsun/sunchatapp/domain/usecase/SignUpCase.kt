@@ -15,11 +15,12 @@ class SignUpCase(
     operator fun invoke(email: String, password: String): Flow<Resource<Boolean>> {
         return flow {
             emit(Resource.Loading())
-            val response = repository.signUpUser(email, password)
-            if (response) {
-                emit(Resource.Success(true))
-            } else {
-                emit(Resource.Error("Kayıt oluşturulamadı"))
+            try {
+                repository.signUpUser(email, password)
+            } catch (e: Exception) {
+                e.message?.let {
+                    emit(Resource.Error(it))
+                }
             }
         }
     }

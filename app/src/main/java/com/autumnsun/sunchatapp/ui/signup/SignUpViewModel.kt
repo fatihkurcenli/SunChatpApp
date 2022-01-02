@@ -28,10 +28,14 @@ class SignUpViewModel @Inject constructor(
 
     fun signUpEmail(email: String, password: String) {
         viewModelScope.launch {
-            delay(500L)
+            /*if (email.isEmpty() || password.isEmpty()) {
+                _eventFlow.emit(UIEvent.ShowSnackBar("Boşluk bırakmayınız"))
+                return@launch
+            }
             if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 _eventFlow.emit(UIEvent.ShowSnackBar("Geçerli bir e-mail adresi giriniz!"))
-            }
+                return@launch
+            }*/
             sunChatAppCase.signUpCase(email, password).onEach { result ->
                 when (result) {
                     is Resource.Success -> {

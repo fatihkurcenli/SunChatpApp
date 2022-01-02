@@ -9,12 +9,14 @@ import com.autumnsun.sunchatapp.R
 import com.autumnsun.sunchatapp.core.BaseFragment
 import com.autumnsun.sunchatapp.databinding.FragmentSignUpBinding
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 /*
  Created by Fatih Kurcenli on 1/2/2022
 */
 
+@AndroidEntryPoint
 class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
     R.layout.fragment_sign_up
 ) {
@@ -23,10 +25,10 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
         super.onViewCreated(view, savedInstanceState)
 
         binding.signUpButton.setOnClickListener {
-            mViewModel.signUpEmail(
-                binding.emailAddressEditText.text.toString(),
-                binding.passwordEditText.text.toString()
-            )
+             mViewModel.signUpEmail(
+                 binding.emailAddressEditText.text.toString(),
+                 binding.passwordEditText.text.toString()
+             )
         }
 
 
@@ -36,7 +38,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
                     Log.d("SignUp", "isloading")
                 } else {
                     Log.d("signup", "loadingstop")
-                    Snackbar.make(binding.root, it.successMessage, Snackbar.LENGTH_LONG).show()
+                    //Snackbar.make(binding.root, it.successMessage, Snackbar.LENGTH_LONG).show()
                 }
             }
 
