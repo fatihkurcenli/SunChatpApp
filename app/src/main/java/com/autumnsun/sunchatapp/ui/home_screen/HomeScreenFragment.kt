@@ -47,7 +47,6 @@ class HomeScreenFragment :
                 "1",
                 "Fatih Kurçenli",
                 "https://avatars.githubusercontent.com/u/34714108?s=400&u=e2d04c7c9a2464fb1a7e9833760bf4f0ea334d26&v=4",
-                "Hello kotlin",
                 123
             )
         )
@@ -56,7 +55,6 @@ class HomeScreenFragment :
                 "1",
                 "Fatih Kurçenli",
                 "https://avatars.githubusercontent.com/u/34714108?s=400&u=e2d04c7c9a2464fb1a7e9833760bf4f0ea334d26&v=4",
-                "Hello kotlin",
                 123
             )
         )
@@ -65,7 +63,7 @@ class HomeScreenFragment :
                 "1",
                 "Fatih Kurçenli",
                 "https://avatars.githubusercontent.com/u/34714108?s=400&u=e2d04c7c9a2464fb1a7e9833760bf4f0ea334d26&v=4",
-                "Hello kotlin",
+
                 123
             )
         )
@@ -74,7 +72,7 @@ class HomeScreenFragment :
                 "1",
                 "Fatih Kurçenli",
                 "https://avatars.githubusercontent.com/u/34714108?s=400&u=e2d04c7c9a2464fb1a7e9833760bf4f0ea334d26&v=4",
-                "Hello kotlin",
+
                 123
             )
         )
@@ -83,7 +81,7 @@ class HomeScreenFragment :
                 "1",
                 "Fatih Kurçenli",
                 "https://avatars.githubusercontent.com/u/34714108?s=400&u=e2d04c7c9a2464fb1a7e9833760bf4f0ea334d26&v=4",
-                "Hello kotlin",
+
                 123
             )
         )

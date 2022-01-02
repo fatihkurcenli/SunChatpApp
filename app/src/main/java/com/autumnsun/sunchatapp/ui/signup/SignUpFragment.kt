@@ -24,12 +24,12 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.signUpButton.setOnClickListener {
-             mViewModel.signUpEmail(
-                 binding.emailAddressEditText.text.toString(),
-                 binding.passwordEditText.text.toString()
-             )
-        }
+        /* binding.signUpButton.setOnClickListener {
+              mViewModel.signUpEmail(
+                  binding.emailAddressEditText.text.toString(),
+                  binding.passwordEditText.text.toString()
+              )
+         }*/
 
 
         lifecycleScope.launchWhenCreated {

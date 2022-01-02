@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.autumnsun.sunchatapp.core.utils.DataStoreUtil
+import com.autumnsun.sunchatapp.core.utils.SecurityUtil
 import com.autumnsun.sunchatapp.data.repository.ChatAppImpl
 import com.autumnsun.sunchatapp.domain.repository.ChatRepository
 import com.autumnsun.sunchatapp.domain.usecase.SignUpCase
@@ -43,9 +45,10 @@ object AppModule {
     @Singleton
     fun provideChatRepository(
         db: FirebaseDatabase,
-        auth: FirebaseAuth
+        auth: FirebaseAuth,
+        dataStore: DataStoreUtil
     ): ChatRepository {
-        return ChatAppImpl(db, auth)
+        return ChatAppImpl(db, auth, dataStore)
     }
 
     @Provides
@@ -62,4 +65,20 @@ object AppModule {
     @Singleton
     fun provideDataStore(@ApplicationContext context: Context): DataStore<Preferences> =
         preferencesDataStore(name = "data-store").getValue(context, String::javaClass)
+
+    @Provides
+    @Singleton
+    fun provideDataStoreUtil(
+        dataStore: DataStore<Preferences>,
+        securityUtil: SecurityUtil
+    ): DataStoreUtil {
+        return DataStoreUtil(dataStore, securityUtil)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSecurityUtil(): SecurityUtil {
+        return SecurityUtil()
+    }
+
 }
